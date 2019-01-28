@@ -1,0 +1,49 @@
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail img{
+  width: 100%;
+}
+
+.thumbnail{
+  padding: 0px;
+}
+
+.caption-full{
+  padding: 10px;
+}
+
+.campgorounds_HeadContain{
+  margin-top: 80px;
+}
+
+.show_HeadContain{
+  margin-top: 80px;
+}
+
+hr{
+  border-color: black;
+}
+
+.landing_HeadContain{
+  margin-top: 50px;
+}
+
+.new_HeadContain{
+  margin: 80px auto;
+  max-width: 800px;
+}
+
+.new_h1{
+  text-align: center;
+}
+
+.new_Form{
+  max-width: 400px;
+  margin: 0 auto;
+}
+.new_btnSubmit{
+  margin-bottom: 10px;
+}

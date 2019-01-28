@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container show_HeadContain">
+  <div>
+    <h1><%= v_post.title %></h1>
+    <h3><%= v_post.description %></h3>
+    <h5 class="pull-right"> <em> Date: <%= v_post.created %> </em> </h5>
+  </div>
+</div>
+<div class="container">
+  <div>
+    <a href="/posts/<%= v_post._id %>/comments/new" class="btn btn-primary pull-right">Add a comment</a>
+  </div>
+</div>
+
+
+<div class="container">
+  <h3>Comments:</h3>
+  <hr>
+ <% v_post.comments.forEach(comment => { %>  
+  <p> <%= comment.text %> </p>
+  <p> <em>commented by -</em> <strong> <%= comment.author %> </strong>  </p>
+  <hr>
+ <% }); %>
+
+</div>
+
+<% include ../partials/footer %>

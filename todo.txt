@@ -1,0 +1,10 @@
+Design and implement a simple blog site having the following criteria
+
+•   To use the blog user have to register using user id, password, full name country and email id.
+•   After login user can create posts. There should have a javascript based rich text editor (such as tinymce) for this purpose.
+•   After creating a blog post user will be able to save the post as published/draft/personal. Only published posts will be publicly visible in the blog. 
+•   Each published posts should be listed in chronological order in the blog 
+•   Any visitor can read and comment on a blog post. There should be a form for this purpose
+•   comments specific to a post should be listed after the post in chronological order
+•   User should have the ability to delete any comment given to his blog post.
+•   Database design should follow database normalization criteria.

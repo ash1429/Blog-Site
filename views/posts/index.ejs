@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+<div class="container show_HeadContain">
+  <header class="jumbotron">
+    <div class="container">
+      <h1>Welcome To Blog!</h1>
+      <p>A simple blog for demonstration</p>
+      <p>
+        <a class="btn btn-primary btn-large" href="/posts/new">Add a new Post</a>
+      </p>
+    </div>
+  </header>
+
+
+<% v_blogData.slice().reverse().forEach(post => { %>
+  <div class="row">
+    <div class="col-md-8">
+      <h3><%= post.title %></h3>
+      <p><%= post.description %></p>
+    </div>
+    <div class="col-md-4">
+      <a href="/posts/<%= post._id %>" class="btn btn-primary pull-right">details</a>
+    </div>
+  </div>
+  <hr>
+<% }); %>
+
+</div>
+
+    
+<% include ../partials/footer %>

@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+
+<div class="container new_HeadContain">
+    <h1 class="new_h1">New Post</h1>
+  <form class="new_Form" action="/posts" method="POST">
+    <div class="form-group">
+      <label for="title">Title: </label>
+      <input type="text" class="form-control" name="blog[title]" id="title" placeholder="Title" autofocus>
+    </div>
+    
+    <div class="form-group">
+      <label for="description">Description: </label>
+      <textarea class="form-control" rows="5" name="blog[description]" id="description" placeholder="Write .."></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary btn-lg btn-block new_btnSubmit" value="Post">
+    <a href="/">Go back</a>
+  </form>
+  
+</div>
+
+<% include ../partials/footer %>
