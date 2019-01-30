@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+<div class="container show_HeadContain">
+  <h1>My All Posts</h1>
+<% v_posts.forEach(post => { %>
+  <div class="row div_row_owned">
+    <div class="col-md-10">
+      <h1> <%= post.title %> </h1>
+      <h3><%= post.description %></h3>
+      <h5><em> Date: <%= post.created %> </em> </h5>
+    </div>
+
+    <div class="col-md-2">
+      <div>
+        <a href="#" class="btn btn-primary btn_v_owned">Edit</a>
+        <a href="#" class="btn btn-danger pull-right">Delete</a>
+      </div>
+    </div>
+
+    
+    
+  </div>
+<% }); %> 
+
+
+
+<% include ../partials/footer %>

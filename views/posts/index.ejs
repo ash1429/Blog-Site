@@ -11,15 +11,24 @@
     </div>
   </header>
 
-
 <% v_blogData.slice().reverse().forEach(post => { %>
   <div class="row">
     <div class="col-md-8">
       <h3><%= post.title %></h3>
-      <p><%= post.description %></p>
+      <div style="padding-bottom: 20px; padding-left: 5px;">
+        <em>Posted by</em> - <strong>
+          <%= post.author.username %></strong>
+      </div>
+      <% if(post.description.length > 400) { %>
+      <p>
+        <%= post.description.substring(0,400) %>.... <a href="/posts/<%= post._id %>">Read More</a> </p>
+      <% } else{ %>
+      <p>
+        <%= post.description %>.</a> </p>
+      <% } %>
     </div>
     <div class="col-md-4">
-      <a href="/posts/<%= post._id %>" class="btn btn-primary pull-right">details</a>
+      <a href="/posts/<%= post._id %>" class="btn btn-primary pull-right">Details</a>
     </div>
   </div>
   <hr>

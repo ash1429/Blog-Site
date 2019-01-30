@@ -47,3 +47,14 @@ hr{
 .new_btnSubmit{
   margin-bottom: 10px;
 }
+
+.btn_v_owned{
+  /* padding: 5px;
+  margin: 0 auto; */
+  width: 40%;
+  float: left;
+}
+
+.div_row_owned{
+  margin-bottom: 10%;
+}

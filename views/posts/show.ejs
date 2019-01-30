@@ -5,11 +5,20 @@
     <h1><%= v_post.title %></h1>
     <h3><%= v_post.description %></h3>
     <h5 class="pull-right"> <em> Date: <%= v_post.created %> </em> </h5>
+    <h5 style="padding: 20px"><em>Posted by</em> - <strong><%= v_post.author.username %></strong>
+ </h5>
+  
   </div>
 </div>
 <div class="container">
   <div>
-    <a href="/posts/<%= v_post._id %>/comments/new" class="btn btn-primary pull-right">Add a comment</a>
+    <a href="/posts/<%= v_post._id %>/comments/new" class="btn btn-success pull-right">Add a comment</a>
+  <% if(currentUser && currentUser._id.equals(v_post.author.id)){ %>
+      <a href="/posts/<%= v_post._id %>/edit" class="btn btn-primary">Edit</a>
+  <% } %>
+  <% if(currentUser && currentUser._id.equals(v_post.author.id)){ %>
+      <a href="/posts/<%= v_post._id %>/delete" class="btn btn-danger">Delete</a>
+  <% } %>
   </div>
 </div>
 
