@@ -8,3 +8,5 @@ Design and implement a simple blog site having the following criteria
 •   comments specific to a post should be listed after the post in chronological order
 •   User should have the ability to delete any comment given to his blog post.
 •   Database design should follow database normalization criteria.
+
+>>In case you have time, add tinymce
