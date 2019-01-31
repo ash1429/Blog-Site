@@ -12,7 +12,6 @@ router.get("/", function (req, res) {
   Post.findById(req.params.id_post).populate("comments").exec((err, post) => {
     if (err) console.log(err);
     else {
-      // console.log(post);
       res.render("posts/show", { v_post: post });
     }
   });

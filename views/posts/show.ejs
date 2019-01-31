@@ -28,7 +28,12 @@
   <hr>
  <% v_post.comments.forEach(comment => { %>  
   <p> <%= comment.text %> </p>
-  <p> <em>commented by -</em> <strong> <%= comment.author %> </strong>  </p>
+  <% if(currentUser && currentUser._id.equals(v_post.author.id)){ %>
+    <p style="float: left; padding: 10px;"> <em>commented by -</em> <strong> <%= comment.author %> </strong>  </p>
+    <a href="#" class="btn btn-danger">Delete</a>
+  <% } else{ %>
+      <p> <em>commented by -</em> <strong> <%= comment.author %> </strong>  </p>
+  <% }; %>
   <hr>
  <% }); %>
 

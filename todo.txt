@@ -9,4 +9,12 @@ Design and implement a simple blog site having the following criteria
 •   User should have the ability to delete any comment given to his blog post.
 •   Database design should follow database normalization criteria.
 
->>In case you have time, add tinymce
+adding delete button to each comment;
+ draft, personal --> should check ownership
+
+published,
+
+
+>> User full name, country, email id;
+>>In case you have time, add tinymce;
+

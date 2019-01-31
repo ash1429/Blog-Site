@@ -1,3 +1,7 @@
+/* body{
+  background: burlywood;
+} */
+
 .row{
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +25,7 @@
 
 .show_HeadContain{
   margin-top: 80px;
+  max-width: 80%;
 }
 
 hr{
@@ -57,4 +62,10 @@ hr{
 
 .div_row_owned{
   margin-bottom: 10%;
+}
+
+.post_index{
+  max-width: 80%;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }

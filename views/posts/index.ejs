@@ -13,7 +13,7 @@
 
 <% v_blogData.slice().reverse().forEach(post => { %>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12 col-sm-12 post_index">
       <h3><%= post.title %></h3>
       <div style="padding-bottom: 20px; padding-left: 5px;">
         <em>Posted by</em> - <strong>
@@ -26,12 +26,11 @@
       <p>
         <%= post.description %>.</a> </p>
       <% } %>
-    </div>
-    <div class="col-md-4">
-      <a href="/posts/<%= post._id %>" class="btn btn-success pull-right">Comments</a>
+      <div>
+        <a href="/posts/<%= post._id %>" class="btn btn-success">Comments</a>
+      </div>
     </div>
   </div>
-  <hr>
 <% }); %>
 
 </div>
