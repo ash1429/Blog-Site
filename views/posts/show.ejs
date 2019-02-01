@@ -14,10 +14,10 @@
   <div>
     <a href="/posts/<%= v_post._id %>/comments/new" class="btn btn-success pull-right">Add a comment</a>
   <% if(currentUser && currentUser._id.equals(v_post.author.id)){ %>
-      <a href="/posts/<%= v_post._id %>/edit" class="btn btn-primary">Edit</a>
+      <a href="/posts/<%= currentUser.username %>/<%= currentUser._id %>/edit/<%= v_post._id %>" class="btn btn-primary">Edit</a>
   <% } %>
   <% if(currentUser && currentUser._id.equals(v_post.author.id)){ %>
-      <a href="/posts/<%= v_post._id %>/delete" class="btn btn-danger">Delete</a>
+      <a href="/posts/<%= currentUser.username %>/<%= currentUser._id %>/delete/<%= v_post._id %>" class="btn btn-danger">Delete</a>
   <% } %>
   </div>
 </div>
@@ -30,7 +30,7 @@
   <p> <%= comment.text %> </p>
   <% if(currentUser && currentUser._id.equals(v_post.author.id)){ %>
     <p style="float: left; padding: 10px;"> <em>commented by -</em> <strong> <%= comment.author %> </strong>  </p>
-    <a href="#" class="btn btn-danger">Delete</a>
+    <a href="/posts/<%= v_post._id %>/<%= v_post.author.id %>/<%= comment._id %>/delete" class="btn btn-danger">Delete</a>
   <% } else{ %>
       <p> <em>commented by -</em> <strong> <%= comment.author %> </strong>  </p>
   <% }; %>

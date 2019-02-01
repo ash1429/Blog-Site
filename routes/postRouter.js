@@ -6,7 +6,7 @@ var User = require('../models/user');
 var Post = require('../models/post');
 
 router.get("/", function (req, res) {
-  Post.find({}, (err, blogData) => {
+  Post.find({'status': 'publish'}, (err, blogData) => {
     if (err) console.log(err);
     else {
       res.render("posts/index", { v_blogData: blogData });
@@ -17,12 +17,13 @@ router.get("/", function (req, res) {
 router.post("/", middleware.isLoggedIn, function (req, res) {
   var title = req.body.blog.title;
   var description = req.body.blog.description;
+  var status = req.body.blog.status;
   var author = {
     id: req.user._id,
     username: req.user.username
   }
 
-  var newPost = { title: title, description: description, author: author };
+  var newPost = { title: title, description: description, status: status, author: author };
 
   Post.create(newPost, (err, blogData) => {
     if (err) console.log(err);

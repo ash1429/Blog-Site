@@ -4,20 +4,29 @@
   <h1>My All Posts</h1>
 <% v_posts.forEach(post => { %>
   <div class="row div_row_owned">
-    <div class="col-md-10">
+    <div class="col-md-8" style="margin: 0 auto;">
       <h1> <%= post.title %> </h1>
+      <% if(post.status === 'publish') { %>
+        <h4 class="post_status_publish"><%= post.status %></h4>
+
+      <% } else if(post.status === 'draft'){ %>
+        <h4 class="post_status_draft"><%= post.status %></h4>
+      
+      <% } else if(post.status === 'personal') { %>
+        <h4 class="post_status_personal"><%= post.status %></h4>
+      <% } %>
+
       <h3><%= post.description %></h3>
       <h5><em> Date: <%= post.created %> </em> </h5>
-    </div>
-
-    <div class="col-md-2">
       <div>
-        <a href="#" class="btn btn-primary btn_v_owned">Edit</a>
-        <a href="#" class="btn btn-danger pull-right">Delete</a>
+        <a href="/posts/<%= currentUser.username %>/<%= currentUser._id %>/edit/<%= post._id %>" class="btn btn-primary">Edit</a>
+        <a href="/posts/<%= currentUser.username %>/<%= currentUser._id %>/delete/<%= post._id %>" class="btn btn-danger">Delete</a>
+        <% if(post.status === 'publish') { %>
+        <a href="/posts/<%= post._id %>" class="btn btn-success">Comments</a>
+        <% } %>
+
       </div>
     </div>
-
-    
     
   </div>
 <% }); %> 

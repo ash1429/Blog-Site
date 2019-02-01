@@ -9,7 +9,7 @@ var Comment = require('../models/comment');
 
 
 router.get("/", function (req, res) {
-  Post.findById(req.params.id_post).populate("comments").exec((err, post) => {
+  Post.findOne({ '_id': req.params.id_post }).populate("comments").exec((err, post) => {
     if (err) console.log(err);
     else {
       res.render("posts/show", { v_post: post });
@@ -23,7 +23,7 @@ router.get("/comments/new", function (req, res) {
 });
 
 router.post("/comments", function (req, res) {
-  Post.findById(req.params.id_post, (err, post) => {
+  Post.findOne({'_id': req.params.id_post}, (err, post) => {
     if (err) console.log(err);
     else {
       // console.log(post);
@@ -47,4 +47,13 @@ router.post("/comments", function (req, res) {
   });
 });
 
+router.get("/:id_user/:id_comment/delete", middleware.checkUsersPostOwnership, function (req, res) {
+  // res.send("deleting..." + req.params.id_comment);
+  Comment.findOneAndRemove({ '_id': req.params.id_comment}, (err, comment)=>{
+    if(err) console.log(err);
+    else{
+      res.redirect("/posts/" + req.params.id_post);
+    }
+  });
+});
 module.exports = router;

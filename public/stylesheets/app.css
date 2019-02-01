@@ -53,12 +53,7 @@ hr{
   margin-bottom: 10px;
 }
 
-.btn_v_owned{
-  /* padding: 5px;
-  margin: 0 auto; */
-  width: 40%;
-  float: left;
-}
+
 
 .div_row_owned{
   margin-bottom: 10%;
@@ -69,3 +64,32 @@ hr{
   margin: 0 auto;
   padding-bottom: 20px;
 }
+
+
+.post_status_publish{
+  background-color:#8dec11;
+  min-width: 70px;
+  max-width: 70px;
+  padding: 5px 0;
+  color: white;
+  text-align: center;
+}
+
+.post_status_draft{
+  background-color:#ec9411;
+  min-width: 70px;
+  max-width: 70px;
+  padding: 5px 0;
+  color: white;
+  text-align: center;
+}
+
+.post_status_personal{
+  background-color:#3e41ab;
+  min-width: 80px;
+  max-width: 80px;
+  padding: 5px 0;
+  color: white;
+  text-align: center;
+}
+
