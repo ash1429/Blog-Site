@@ -16,7 +16,7 @@
         <h4 class="post_status_personal"><%= post.status %></h4>
       <% } %>
 
-      <h3><%= post.description %></h3>
+      <h3><%- post.description %></h3>
       <h5><em> Date: <%= post.created %> </em> </h5>
       <div>
         <a href="/posts/<%= currentUser.username %>/<%= currentUser._id %>/edit/<%= post._id %>" class="btn btn-primary">Edit</a>

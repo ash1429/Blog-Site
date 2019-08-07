@@ -21,10 +21,10 @@
       </div>
       <% if(post.description.length > 400) { %>
       <p>
-        <%= post.description.substring(0,400) %>.... <a href="/posts/<%= post._id %>">Read More</a> </p>
+        <%- post.description.substring(0,400) %> <a href="/posts/<%= post._id %>">....Read More</a> </p>
       <% } else{ %>
       <p>
-        <%= post.description %>.</a> </p>
+        <%- post.description %></a> </p>
       <% } %>
       <div>
         <a href="/posts/<%= post._id %>" class="btn btn-success">Comments</a>
